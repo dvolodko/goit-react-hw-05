@@ -9,11 +9,14 @@ const config = {
     accept: 'application/json',
     Authorization: `Bearer ${KEY}`,
   },
-  // params: {},
+  params: {
+    include_adult: true,
+    language: 'en-US',
+  },
 };
 
 async function fetchTrendingMovies() {
-  const response = await axios.get('trending/movie/week', config);
+  const response = await axios.get('trending/movie/day', config);
 
   return response.data;
 }

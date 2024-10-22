@@ -1,10 +1,9 @@
 import { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import NotFoundPage from '../../pages/NotFoundPage';
-import { AppBar } from '../AppBar/AppBar';
+import Navigation from '../Navigation/Navigation';
 import css from './App.module.css';
-import { fetchTrendingMovies } from '../../js/tmdb-api';
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 
 const HomePage = lazy(() => import('../../pages/HomePage'));
 const MoviesPage = lazy(() => import('../../pages/MoviesPage'));
@@ -13,21 +12,9 @@ const MovieCast = lazy(() => import('../MovieCast/MovieCast'));
 const MovieReviews = lazy(() => import('../MovieReviews/MovieReviews'));
 
 function App() {
-  useEffect(() => {
-    async function fetchTrendingMoviesHandler() {
-      try {
-        const data = await fetchTrendingMovies();
-        console.log(data);
-      } catch (error) {
-        console.log(error.message);
-      }
-    }
-    fetchTrendingMoviesHandler();
-  }, []);
-
   return (
     <div className={css.container}>
-      <AppBar />
+      <Navigation />
       <Suspense fallback={<div>Loading page...</div>}>
         <Routes>
           <Route path="/" element={<HomePage />} />
