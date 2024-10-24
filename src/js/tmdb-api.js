@@ -21,4 +21,10 @@ async function fetchTrendingMovies() {
   return response.data;
 }
 
-export { fetchTrendingMovies };
+async function fetchMovie(id) {
+  const response = await axios.get(`movie/${id}`, config);
+
+  return response.data;
+}
+
+export { fetchTrendingMovies, fetchMovie };

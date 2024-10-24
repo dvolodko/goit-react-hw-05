@@ -15,11 +15,14 @@ function HomePage() {
     }
     fetchTrendingMoviesHandler();
   }, []);
+
   return (
-    <div className="container">
-      <h1>Trending today</h1>
-      <MovieList moviesData={moviesData} />
-    </div>
+    <main>
+      <div className="container">
+        <h1>Trending today</h1>
+        <MovieList moviesData={moviesData} />
+      </div>
+    </main>
   );
 }
 

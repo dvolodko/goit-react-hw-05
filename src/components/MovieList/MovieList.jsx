@@ -6,7 +6,6 @@ function MovieList({ moviesData }) {
   return (
     <ul className={css.movieList}>
       {moviesData.map((movie) => {
-        console.log(movie);
         return (
           <li key={movie.id} className={css.movieCard}>
             <Link to={`/movies/${movie.id}`} state={location}>
