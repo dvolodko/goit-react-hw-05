@@ -10,21 +10,42 @@ const config = {
     Authorization: `Bearer ${KEY}`,
   },
   params: {
-    include_adult: true,
+    include_adult: false,
     language: 'en-US',
   },
 };
 
 async function fetchTrendingMovies() {
-  const response = await axios.get('trending/movie/day', config);
+  return await fetch('trending/movie/day');
+}
+
+async function fetchMovieDetails(id) {
+  return await fetch(`movie/${id}`);
+}
+
+async function fetchMovieCast(id) {
+  return await fetch(`movie/${id}/credits`);
+}
+
+async function fetchMovieReviews(id) {
+  return await fetch(`movie/${id}/reviews`);
+}
+
+async function fetchMovies(query) {
+  config.params.query = query;
+  return await fetch('search/movie');
+}
+
+async function fetch(url) {
+  const response = await axios.get(url, config);
 
   return response.data;
 }
 
-async function fetchMovie(id) {
-  const response = await axios.get(`movie/${id}`, config);
-
-  return response.data;
-}
-
-export { fetchTrendingMovies, fetchMovie };
+export {
+  fetchTrendingMovies,
+  fetchMovieDetails,
+  fetchMovieCast,
+  fetchMovieReviews,
+  fetchMovies,
+};

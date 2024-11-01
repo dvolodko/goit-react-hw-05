@@ -8,14 +8,17 @@ function MovieList({ moviesData }) {
       {moviesData.map((movie) => {
         return (
           <li key={movie.id} className={css.movieCard}>
-            <Link to={`/movies/${movie.id}`} state={location}>
+            <Link
+              to={`/movies/${movie.id}`}
+              state={location}
+              className={css.movieLink}>
               <div className={css.posterWrapper}>
                 <img
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                   alt={movie.title}
                 />
-                <h2>{movie.title}</h2>
               </div>
+              <h2 className={css.movieTitle}>{movie.title}</h2>
             </Link>
           </li>
         );

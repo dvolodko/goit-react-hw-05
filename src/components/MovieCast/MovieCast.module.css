@@ -1,0 +1,19 @@
+.movieCastList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.movieCastItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: calc((100% - 2 * 24px) / 3);
+}
+
+.profileImageWrapper {
+  width: 185px;
+}

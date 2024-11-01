@@ -9,7 +9,7 @@ function buildLinkClass({ isActive }) {
 function Navigation() {
   return (
     <header className={css.header}>
-      <nav>
+      <nav className={css.nav}>
         <NavLink to="/" className={buildLinkClass}>
           Home
         </NavLink>

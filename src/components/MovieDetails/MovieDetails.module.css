@@ -1,0 +1,42 @@
+.movieDetailsWrapper {
+  display: flex;
+  gap: 32px;
+}
+
+.movieDetailsDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.posterWrapper {
+  flex-shrink: 0;
+  width: 342px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.voteScore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.voteScoreImg {
+  width: 24px;
+  height: 24px;
+}
+
+.movieDetailsOverview {
+  text-align: start;
+}
+
+.movieDetailsGenres {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
